@@ -5,6 +5,7 @@
 *The first two authors contribute equally to this work*
 # News
 
++ **2022.06.28**: Data, code, and models have been released. 🐌
 + **2022.06.22**: Our paper has been accepted by J-BHI 2022. 🐌
 
 ***
