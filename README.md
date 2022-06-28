@@ -17,3 +17,4 @@
 Real Fundus consists of 120 LQ and HQ clinical fundus image pairs with the spatial size of 2560 $\times$ 2560.
 
 # Network Architecture
+![image](https://github.com/dengzhuo-AI/Real-Fundus/blob/main/figure/pipeline.png)
