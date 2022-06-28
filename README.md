@@ -12,4 +12,4 @@
 ***
 
 # Real Fundus
-![image](https://github.com/dengzhuo-AI/Real-Fundus/blob/main/figure/dataset.pdf)
+![image](https://github.com/dengzhuo-AI/Real-Fundus/blob/main/figure/dataset.png)
