@@ -39,3 +39,4 @@ We are going to enlarge our model zoo in the future.
 | [MST](https://openaccess.thecvf.com/content/CVPR2022/html/Cai_Mask-Guided_Spectral-Wise_Transformer_for_Efficient_Hyperspectral_Image_Reconstruction_CVPR_2022_paper.html) | 3.48 | 3.59| 28.13 | 0.854 |    |    |
 | [RFormer](https://arxiv.org/abs/2201.00466) | 21.11 | 11.36 | 28.32 | 0.873 |   |   |
 
+The test size of FLOPS is 128 $\times$ 128. For GANs, we just test and show the Params of Generators.
