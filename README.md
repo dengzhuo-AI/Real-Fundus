@@ -28,3 +28,14 @@ We are going to enlarge our model zoo in the future.
 
 ## Quantitative Comparison on Real Fundus
 
+| Method | Params(M) | FLOPS(G) | PSNR | SSIM |  Model ZOO | Result|
+|:--------:|:--------:|:--------:|:-----:|:-----:|:-------:|:------:|
+|[Cofe-Net](https://ieeexplore.ieee.org/abstract/document/9288835)|39.31|22.48|17.26|0.789|  |   |
+|[GLCAE](https://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w43/Tian_Global_and_Local_ICCV_2017_paper.pdf) | --- | --- | 21.37 | 0.570 | | |
+|[I-SECRET](https://link.springer.com/chapter/10.1007/978-3-030-87237-3_9)| 10.85 | 14.21| 24.57 | 0.854|  |  |
+| [Bicubic+RL](https://ieeexplore.ieee.org/abstract/document/5674049) | --- | --- | 25.34 | 0.824 |   |   |
+| [ESRGAN](https://openaccess.thecvf.com/content_eccv_2018_workshops/w25/html/Wang_ESRGAN_Enhanced_Super-Resolution_Generative_Adversarial_Networks_ECCVW_2018_paper.html) | 15.95 | 18.41 | 26.73 | 0.823 |   |   |
+| [RealSR](https://openaccess.thecvf.com/content_CVPRW_2020/html/w31/Ji_Real-World_Super-Resolution_via_Kernel_Estimation_and_Noise_Injection_CVPRW_2020_paper.html) | 15.92 | 29.42 | 27.99 | 0.850 |   |   |
+| [MST](https://openaccess.thecvf.com/content/CVPR2022/html/Cai_Mask-Guided_Spectral-Wise_Transformer_for_Efficient_Hyperspectral_Image_Reconstruction_CVPR_2022_paper.html) | 3.48 | 3.59| 28.13 | 0.854 |    |    |
+| [RFormer](https://arxiv.org/abs/2201.00466) | 21.11 | 11.36 | 28.32 | 0.873 |   |   |
+
