@@ -19,3 +19,12 @@ Real Fundus consists of 120 LQ and HQ clinical fundus image pairs with the spati
 
 # Network Architecture
 ![image](https://github.com/dengzhuo-AI/Real-Fundus/blob/main/figure/pipeline.png)
+
+# Comparison with State-of-the-art Methods
+
+This repo is a baseline and toolbox containing 8 algorithms for real fundus images.
+
+We are going to enlarge our model zoo in the future.
+
+## Quantitative Comparison on Real Fundus
+
