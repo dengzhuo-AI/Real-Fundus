@@ -43,8 +43,8 @@ The test size of FLOPS is 128 $\times$ 128. For GANs, we just test and show the 
 
 # 1.Create Environment:
 
-+ Python 3 (Recommend to use Anaconda)
-+ NVIDIA GPU + CUDA
++ Python 3 (Recommend to use [Anaconda](https://www.anaconda.com/products/distribution#linux))
++ NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 + Python packages:
 
 ```bash
