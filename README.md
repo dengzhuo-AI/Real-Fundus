@@ -40,3 +40,13 @@ We are going to enlarge our model zoo in the future.
 | [RFormer](https://arxiv.org/abs/2201.00466) | 21.11 | 11.36 | 28.32 | 0.873 |   |   |
 
 The test size of FLOPS is 128 $\times$ 128. For GANs, we just test and show the Params of Generators.
+
+# 1.Create Environment:
+
++ Python 3 (Recommend to use Anaconda)
++ NVIDIA GPU + CUDA
++ Python packages:
+
+```bash
+pip install -r requirements.txt
+```
