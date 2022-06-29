@@ -50,3 +50,6 @@ The test size of FLOPS is 128 $\times$ 128. For GANs, we just test and show the 
 ```bash
 pip install -r requirements.txt
 ```
+
+# 2.Prepare Dataset:
+
