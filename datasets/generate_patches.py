@@ -23,8 +23,8 @@ def cropimg(patch,step, imgpath,save_path):
 				print(save_path + '/' + img_nmm + '_' + str(i) + '_' + str(j) + '.jpg')
 
 if __name__ == '__main__':
-	source_path = "./train/gt/"
-	save_path = "./train_dataset/gt"
+	source_path = "./train/gt/"  #source_patch: "./train/gt/", "./train/input/", "./val/gt/", "./val/input/"
+	save_path = "./train_dataset/gt"  #save_path: "./train_dataset/gt/", "./train_dataset/input/", "./val_dataset/gt/", "./val_dataset/input/"
 	file_names = os.listdir(source_path)
 
 	for i in range(len(file_names)):
