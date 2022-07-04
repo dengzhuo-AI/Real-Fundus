@@ -54,8 +54,12 @@ pip install -r requirements.txt
 
 # 2.Prepare Dataset:
 + Download Real Fundus and unzip [Real_Fundus.zip](https://github.com/dengzhuo-AI/Real-Fundus/releases/download/v.1.0.0/Real_Fundus.zip) into `./datasets/Real_Fundus/`
-+ Divide Real Fundus into training dataset, validation dataset , and testing dataset randomly. The default rate is training : validation : testing = 81 : 9 : 30. 
++ Divide Real Fundus into training images, validation images , and testing images randomly. The default rate is training : validation : testing = 81 : 9 : 30. 
 ```bash
 cd /Real-Fundus/datasets/
 python3 generate_dataset.py
+```
++ Crop training and validation images into the patches with the size of 128 $\times$ 128 and generate the train_dataset and val_dataset.
+```bash
+python3 generate_patches.py
 ```
