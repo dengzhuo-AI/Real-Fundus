@@ -48,8 +48,14 @@ The test size of FLOPS is 128 $\times$ 128. For GANs, we just test and show the 
 + Python packages:
 
 ```bash
+cd /Real-Fundus/
 pip install -r requirements.txt
 ```
 
 # 2.Prepare Dataset:
-
++ Download Real Fundus and unzip [Real_Fundus.zip](https://github.com/dengzhuo-AI/Real-Fundus/releases/download/v.1.0.0/Real_Fundus.zip) into `./datasets/Real_Fundus/`
++ Divide Real Fundus into training dataset, validation dataset , and testing dataset randomly. The default rate is training : validation : testing = 81 : 9 : 30. 
+```bash
+cd /Real-Fundus/datasets/
+python3 generate_dataset.py
+```
