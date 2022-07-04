@@ -59,7 +59,7 @@ pip install -r requirements.txt
 cd /Real-Fundus/datasets/
 python3 generate_dataset.py
 ```
-+ Crop training and validation images into the patches with the size of 128 $\times$ 128 and generate the train_dataset and val_dataset.
++ Crop training and validation images into the patches with the size of 128 $\times$ 128 and generate the train_dataset in `./datasets/train_dataset/` and val_dataset in `./datasets/val_dataset/`.
 ```bash
 python3 generate_patches.py
 ```
