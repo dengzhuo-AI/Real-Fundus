@@ -69,3 +69,4 @@ To train a model, run
 cd /Real-Fundus/
 python3 ./train_code/train.py
 ```
+Please note that hyper-parameter, such as path of training data and path of validation data, can be changed in `./train_code/train.yml`.
