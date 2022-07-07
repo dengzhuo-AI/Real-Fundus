@@ -70,3 +70,10 @@ cd /Real-Fundus/
 python3 ./train_code/train.py
 ```
 Please note that hyper-parameter, such as path of training data and path of validation data, can be changed in `./train_code/train.yml`.
+
+# 4.Testing
+To test trained model, run
+```bash
+cd /Real-Fundus/
+python3 ./test_code/test.py
+```
