@@ -12,7 +12,6 @@ import torch.nn.functional as F
 import scipy.io as sio
 from architecture.RFormer import RFormer_G
 from  RF_dataset  import  DataLoaderTes_RF
-from utils import logger as Logger
 import utils
 from skimage import img_as_ubyte
 
