@@ -123,4 +123,11 @@ class  DataLoaderTes_RF(Dataset):
         input = input.permute(2,0,1)
 
         return gt, input, gt_filename, input_filename
+  
+def get_training_data_RF(rgb_dir, img_options):
+    assert os.path.exists(rgb_dir)
+    return DataLoaderTrain_RF(rgb_dir, img_options, None)
 
+def get_validation_data_RF(rgb_dir):
+    assert os.path.exists(rgb_dir)
+    return DataLoaderVal_RF(rgb_dir, None)
