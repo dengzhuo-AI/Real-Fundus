@@ -1,1 +1,25 @@
+###############
+
+GPU: [0]
+
+VERBOSE: True
+
+MODEL:
+  MODE: 'RF'
+  SESSION: 'RFormer'
+
+# Optimization arguments.
+OPTIM:
+  BATCH_SIZE: 4
+  NUM_EPOCHS: 100
+
+  
+
+TRAINING:
+  TRAIN_PS: 128
+  RESUME: False
+  TRAIN_DIR: './datasets/train_dataset/' # path to training data
+  VAL_DIR: './datasets/train_dataset/'     # path to validation data
+  SAVE_DIR: './checkpoints/'        # path to save models and images
+  SAVE_IMAGES: False
 
