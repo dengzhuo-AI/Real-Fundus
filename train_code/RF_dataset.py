@@ -16,8 +16,6 @@ class DataLoaderTrain_RF(Dataset):
 
         self.target_transform = target_transform
 
-        rgb_dir = '/data/dengz/trian_dataset/trian/'
-
         gt_files = sorted(os.listdir(os.path.join(rgb_dir, 'gt')))
         input_files = sorted(os.listdir(os.path.join(rgb_dir, 'input')))
         
@@ -56,8 +54,6 @@ class DataLoaderVal_RF(Dataset):
 
         self.target_transform = target_transform
 
-        rgb_dir = '/data/dengz/trian_dataset/val'
-
 
         gt_files = sorted(os.listdir(os.path.join(rgb_dir, 'gt')))
         input_files = sorted(os.listdir(os.path.join(rgb_dir, 'input')))
@@ -93,9 +89,6 @@ class  DataLoaderTes_RF(Dataset):
 
         self.target_transform = target_transform
 
-#        rgb_dir = '/data/dengz/xujiao_dataset/val'
-        rgb_dir = '/data/dengz/test30_1280'
-#        rgb_dir = '/data/dengz/ri/'
         gt_files = sorted(os.listdir(os.path.join(rgb_dir, 'gt')))
         input_files = sorted(os.listdir(os.path.join(rgb_dir, 'input')))
 
