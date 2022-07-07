@@ -63,3 +63,9 @@ python3 generate_dataset.py
 ```bash
 python3 generate_patches.py
 ```
+# 3.Training
+To train a model, run
+```bash
+cd /Real-Fundus/
+python3 ./train_code/train.py
+```
