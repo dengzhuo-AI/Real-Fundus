@@ -77,4 +77,15 @@ To test trained model, run
 cd /Real-Fundus/
 python3 ./test_code/test.py
 ```
+# 6.Citation
+If this repo helps you, please consider citing our works:
+```bash
+@article{deng2022rformer,
+  title={Rformer: Transformer-based generative adversarial network for real fundus image restoration on a new clinical benchmark},
+  author={Deng, Zhuo and Cai, Yuanhao and Chen, Lu and Gong, Zheng and Bao, Qiqi and Yao, Xue and Fang, Dong and Yang, Wenming and Zhang, Shaochong and Ma, Lan},
+  journal={IEEE Journal of Biomedical and Health Informatics},
+  year={2022},
+  publisher={IEEE}
+}
+```
 
