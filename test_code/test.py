@@ -39,7 +39,7 @@ model_restoration = RFormer_G()
 utils.load_checkpoint(model_restoration,args.weights)
 print("===>Testing using weights: ", args.weights)
 model_restoration.cuda()
-criterion = pytorch_ssim.SSIM(window_size = 11).cuda()
+criterion = pytorch_ssim.SSIM(window_size = 3).cuda()
 
 model_restoration.eval()
 
