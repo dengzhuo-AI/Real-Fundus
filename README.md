@@ -77,7 +77,7 @@ To test trained model, run
 cd /Real-Fundus/
 python3 ./test_code/test.py
 ```
-# 6.Citation
+# 5.Citation
 If this repo helps you, please consider citing our works:
 ```bash
 @article{deng2022rformer,
