@@ -79,7 +79,11 @@ To test trained model, run
 cd /Real-Fundus/
 python3 ./test_code/test.py
 ```
-# 5.Citation
+# 5.Evaluation on the Test Set
+(1) Download the pretrained model zoo from ([Baidu Disk](https://pan.baidu.com/s/1hqBrO9mXpspVWPf2dDEJxA), code: fd11) and place them to /Real-Fundus/test_challenge_code/model_zoo/
+
+
+# 6.Citation
 If this repo helps you, please consider citing our works:
 ```bash
 @article{deng2022rformer,
