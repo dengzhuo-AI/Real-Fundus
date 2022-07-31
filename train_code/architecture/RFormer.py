@@ -218,14 +218,14 @@ class RFormer_G(nn.Module):
         for i in range(stage):
             self.encoder_layers.append(nn.ModuleList([
                 WSAB(
-                    dim=dim_stage, window_size=(8,8), num_blocks=2, dim_head=dim, heads=dim_stage//dim),
+                    dim=dim_stage, window_size=(4,4), num_blocks=2, dim_head=dim, heads=dim_stage//dim),
                 nn.Conv2d(dim_stage, dim_stage*2, 4, 2, 1, bias=False)
             ]))
             dim_stage *= 2
 
         # Bottleneck
         self.bottleneck = WSAB(
-                dim=dim_stage, dim_head=dim, heads=dim_stage//dim, window_size=(8,8), num_blocks=2)
+                dim=dim_stage, dim_head=dim, heads=dim_stage//dim, window_size=(4,4), num_blocks=2)
 
         self.decoder_layers = nn.ModuleList([])
         self.decoder_layers.append(nn.ModuleList([
@@ -234,7 +234,7 @@ class RFormer_G(nn.Module):
             nn.Conv2d(dim_stage,dim_stage//2,3,1,1,bias=False),
             GELU(),
             WSAB(
-                dim=dim_stage, window_size=(8, 8), num_blocks=2, dim_head=dim, heads=dim_stage//dim),
+                dim=dim_stage, window_size=(4, 4), num_blocks=2, dim_head=dim, heads=dim_stage//dim),
         ]))
         for i in range(stage-1):
             self.decoder_layers.append(nn.ModuleList([
@@ -242,7 +242,7 @@ class RFormer_G(nn.Module):
                 nn.Conv2d(dim_stage,dim_stage//4,3,1,1,bias=False),
                 GELU(),
                 WSAB(
-                    dim=dim_stage//2, window_size=(8,8), num_blocks=2, dim_head=dim, heads=(dim_stage//2)//dim),
+                    dim=dim_stage//2, window_size=(4,4), num_blocks=2, dim_head=dim, heads=(dim_stage//2)//dim),
             ]))
             dim_stage //= 2
 
