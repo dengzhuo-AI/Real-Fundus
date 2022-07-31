@@ -85,7 +85,8 @@ python3 ./test_code/test.py
 (2) To test pretrained model, run
 ```bash
 cd /Real-Fundus/
-python3 ./test_code/test.py --
+python3 ./test_code/test.py --weights ./test_code/model_zoo/rformer.pth
+```
 
 
 # 6.Citation
