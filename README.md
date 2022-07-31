@@ -40,6 +40,7 @@ We are going to enlarge our model zoo in the future.
 | [RFormer](https://arxiv.org/abs/2201.00466) | 21.11 | 11.36 | 28.32 | 0.873 | [Baidu Disk](https://pan.baidu.com/s/1hqBrO9mXpspVWPf2dDEJxA)  |
 
 The test size of FLOPS is 128 $\times$ 128. For GANs, we just test and show the Params of Generators.
+Note: access code for Baidu Disk is fd11
 
 # 1.Create Environment:
 
