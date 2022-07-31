@@ -37,7 +37,7 @@ We are going to enlarge our model zoo in the future.
 | [ESRGAN](https://openaccess.thecvf.com/content_eccv_2018_workshops/w25/html/Wang_ESRGAN_Enhanced_Super-Resolution_Generative_Adversarial_Networks_ECCVW_2018_paper.html) | 15.95 | 18.41 | 26.73 | 0.823 |   |
 | [RealSR](https://openaccess.thecvf.com/content_CVPRW_2020/html/w31/Ji_Real-World_Super-Resolution_via_Kernel_Estimation_and_Noise_Injection_CVPRW_2020_paper.html) | 15.92 | 29.42 | 27.99 | 0.850 |   |
 | [MST](https://openaccess.thecvf.com/content/CVPR2022/html/Cai_Mask-Guided_Spectral-Wise_Transformer_for_Efficient_Hyperspectral_Image_Reconstruction_CVPR_2022_paper.html) | 3.48 | 3.59| 28.13 | 0.854 |    |
-| [RFormer](https://arxiv.org/abs/2201.00466) | 21.11 | 11.36 | 28.32 | 0.873 |   |
+| [RFormer](https://arxiv.org/abs/2201.00466) | 21.11 | 11.36 | 28.32 | 0.873 | [Baidu Disk](https://pan.baidu.com/s/1hqBrO9mXpspVWPf2dDEJxA)  |
 
 The test size of FLOPS is 128 $\times$ 128. For GANs, we just test and show the Params of Generators.
 
