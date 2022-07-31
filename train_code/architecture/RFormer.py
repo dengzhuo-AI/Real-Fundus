@@ -113,8 +113,7 @@ class WMSA(nn.Module):
 
         # position embedding
         seq_l = window_size[0]*window_size[1]
-
-        self.pos_emb = nn.Parameter(torch.Tensor(1,  seq_l , dim))
+        self.pos_emb = nn.Parameter(torch.Tensor(1, heads, seq_l, seq_l))
         trunc_normal_(self.pos_emb)
 
         inner_dim = dim_head * heads
@@ -143,12 +142,12 @@ class WMSA(nn.Module):
         q, k, v = map(lambda t: t.contiguous().view(t.shape[0],self.heads,t.shape[1],t.shape[2]//self.heads), (q, k, v))
         q *= self.scale
         sim = einsum('b h i d, b h j d -> b h i j', q, k)
+        sim = sim + self.pos_emb
         attn = sim.softmax(dim=-1)
         out = einsum('b h i j, b h j d -> b h i d', attn, v)
-        out = out.view(out.shape[0],out.shape[2],-1)
+        out = out.view(out.shape[0], out.shape[2], -1)
         out = self.to_out(out)
-        out = out + self.pos_emb
-        out = out.view(out.shape[0]//(h//w_size[0])//(w//w_size[1]), h, w, c)
+        out = out.view(out.shape[0] // (h // w_size[0]) // (w // w_size[1]), h, w, c)
         if self.shift_size[0] > 0:
             out = torch.roll(out, shifts=(self.shift_size[0], self.shift_size[1]), dims=(1, 2))
 
