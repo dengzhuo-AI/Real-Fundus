@@ -1,3 +1,32 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@dengzhuo-AI 
+dengzhuo-AI
+/
+Real-Fundus
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Real-Fundus/train_code/architecture/RFormer.py /
+@dengzhuo-AI
+dengzhuo-AI Update RFormer.py
+Latest commit b9377d8 now
+ History
+ 1 contributor
+369 lines (280 sloc)  10.8 KB
+
 import torch.nn as nn
 import torch
 import torch.nn.functional as F
@@ -113,8 +142,7 @@ class WMSA(nn.Module):
 
         # position embedding
         seq_l = window_size[0]*window_size[1]
-
-        self.pos_emb = nn.Parameter(torch.Tensor(1,  seq_l , dim))
+        self.pos_emb = nn.Parameter(torch.Tensor(1, heads, seq_l, seq_l))
         trunc_normal_(self.pos_emb)
 
         inner_dim = dim_head * heads
@@ -143,12 +171,12 @@ class WMSA(nn.Module):
         q, k, v = map(lambda t: t.contiguous().view(t.shape[0],self.heads,t.shape[1],t.shape[2]//self.heads), (q, k, v))
         q *= self.scale
         sim = einsum('b h i d, b h j d -> b h i j', q, k)
+        sim = sim + self.pos_emb
         attn = sim.softmax(dim=-1)
         out = einsum('b h i j, b h j d -> b h i d', attn, v)
-        out = out.view(out.shape[0],out.shape[2],-1)
+        out = out.view(out.shape[0], out.shape[2], -1)
         out = self.to_out(out)
-        out = out + self.pos_emb
-        out = out.view(out.shape[0]//(h//w_size[0])//(w//w_size[1]), h, w, c)
+        out = out.view(out.shape[0] // (h // w_size[0]) // (w // w_size[1]), h, w, c)
         if self.shift_size[0] > 0:
             out = torch.roll(out, shifts=(self.shift_size[0], self.shift_size[1]), dims=(1, 2))
 
@@ -219,14 +247,14 @@ class RFormer_G(nn.Module):
         for i in range(stage):
             self.encoder_layers.append(nn.ModuleList([
                 WSAB(
-                    dim=dim_stage, window_size=(8,8), num_blocks=2, dim_head=dim, heads=dim_stage//dim),
+                    dim=dim_stage, window_size=(4,4), num_blocks=2, dim_head=dim, heads=dim_stage//dim),
                 nn.Conv2d(dim_stage, dim_stage*2, 4, 2, 1, bias=False)
             ]))
             dim_stage *= 2
 
         # Bottleneck
         self.bottleneck = WSAB(
-                dim=dim_stage, dim_head=dim, heads=dim_stage//dim, window_size=(8,8), num_blocks=2)
+                dim=dim_stage, dim_head=dim, heads=dim_stage//dim, window_size=(4,4), num_blocks=2)
 
         self.decoder_layers = nn.ModuleList([])
         self.decoder_layers.append(nn.ModuleList([
@@ -235,7 +263,7 @@ class RFormer_G(nn.Module):
             nn.Conv2d(dim_stage,dim_stage//2,3,1,1,bias=False),
             GELU(),
             WSAB(
-                dim=dim_stage, window_size=(8, 8), num_blocks=2, dim_head=dim, heads=dim_stage//dim),
+                dim=dim_stage, window_size=(4, 4), num_blocks=2, dim_head=dim, heads=dim_stage//dim),
         ]))
         for i in range(stage-1):
             self.decoder_layers.append(nn.ModuleList([
@@ -243,7 +271,7 @@ class RFormer_G(nn.Module):
                 nn.Conv2d(dim_stage,dim_stage//4,3,1,1,bias=False),
                 GELU(),
                 WSAB(
-                    dim=dim_stage//2, window_size=(8,8), num_blocks=2, dim_head=dim, heads=(dim_stage//2)//dim),
+                    dim=dim_stage//2, window_size=(4,4), num_blocks=2, dim_head=dim, heads=(dim_stage//2)//dim),
             ]))
             dim_stage //= 2
 
@@ -345,5 +373,3 @@ class RFormer_D(nn.Module):
 #        print('{:<30}  {:<8}'.format('Number of parameters: ', params))
 #from torchsummaryX import summary
 #summary(RFormer_D().cuda(),torch.zeros((1,3,128,128)).cuda())
-
-
