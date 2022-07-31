@@ -90,7 +90,7 @@ python3 ./test_code/test.py --weights ./test_code/model_zoo/rformer.pth
 
 
 # 6.Citation
-If this repo helps you, please consider citing our works:
+If this repo helps you, please consider citing our work:
 ```bash
 @article{deng2022rformer,
   title={Rformer: Transformer-based generative adversarial network for real fundus image restoration on a new clinical benchmark},
