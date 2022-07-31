@@ -80,7 +80,12 @@ cd /Real-Fundus/
 python3 ./test_code/test.py
 ```
 # 5.Evaluation on the Test Set
-(1) Download the pretrained model zoo from ([Baidu Disk](https://pan.baidu.com/s/1hqBrO9mXpspVWPf2dDEJxA), code: fd11) and place them to /Real-Fundus/test_challenge_code/model_zoo/
+(1) Download the pretrained model from ([Baidu Disk](https://pan.baidu.com/s/1hqBrO9mXpspVWPf2dDEJxA), code: fd11) and place them to `/Real-Fundus/test_code/model_zoo/`.
+
+(2) To test pretrained model, run
+```bash
+cd /Real-Fundus/
+python3 ./test_code/test.py --
 
 
 # 6.Citation
